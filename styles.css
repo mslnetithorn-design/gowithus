@@ -4,26 +4,22 @@ body {
   padding: 0;
   font-family: 'Inter', sans-serif;
 }
-
 .tour-section {
   padding: 80px 20px;
   background-color: #f9f9f9;
 }
-
 .section-title {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 50px;
   color: #222;
 }
-
 .tour-videos {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
   justify-content: center;
 }
-
 /* Main Video */
 .main-video {
   position: relative;
@@ -32,32 +28,27 @@ body {
   overflow: hidden;
   border-radius: 15px;
 }
-
 .main-video video {
   width: 100%;
   border-radius: 15px;
   display: block;
 }
-
 .main-video .video-overlay {
   position: absolute;
   bottom: 20px;
   left: 20px;
   color: #fff;
 }
-
 .main-video .video-overlay h3 {
   font-size: 2rem;
   margin-bottom: 10px;
   text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
 }
-
 .main-video .video-overlay p {
   font-size: 1.2rem;
   margin-bottom: 15px;
   text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
 }
-
 .main-video .btn {
   display: inline-block;
   padding: 12px 25px;
@@ -68,11 +59,9 @@ body {
   font-weight: 600;
   transition: background 0.3s;
 }
-
 .main-video .btn:hover {
   background-color: #e65c00;
 }
-
 /* Secondary Videos */
 .secondary-videos {
   display: grid;
@@ -81,31 +70,26 @@ body {
   width: 100%;
   margin-top: 50px;
 }
-
 .video-card {
   position: relative;
   border-radius: 15px;
   overflow: hidden;
 }
-
 .video-card video {
   width: 100%;
   border-radius: 15px;
 }
-
 .video-card .video-overlay {
   position: absolute;
   bottom: 10px;
   left: 10px;
   color: #fff;
 }
-
 .video-card h4 {
   font-size: 1.2rem;
   margin-bottom: 5px;
   text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
 }
-
 .btn-small {
   display: inline-block;
   padding: 6px 15px;
@@ -116,11 +100,9 @@ body {
   text-decoration: none;
   transition: background 0.3s;
 }
-
 .btn-small:hover {
   background-color: #e65c00;
 }
-
 /* Responsive */
 @media(max-width: 768px) {
   .main-video .video-overlay h3 {
