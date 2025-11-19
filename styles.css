@@ -1,114 +1,446 @@
-/* Tour Section Styles */
+/* --- 1. GLOBAL STYLES & VARIABLES --- */
+:root {
+    --primary-color: #004d40; /* Dark Teal / Navy - ใช้เป็นสีหลัก */
+    --accent-color: #ffd700; /* Gold - ใช้เป็นสีเน้น/CTA */
+    --background-light: #f4f4f4; /* สีเทาอ่อนสำหรับพื้นหลังส่วนต่าง ๆ */
+    --background-dark: #1a1a1a; /* สีดำเข้มสำหรับ Hero/Footer */
+    --text-color: #333;
+    --font-family: 'Kanit', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Inter', sans-serif;
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: white;
+    scroll-behavior: smooth;
 }
-.tour-section {
-  padding: 80px 20px;
-  background-color: #f9f9f9;
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 0;
 }
-.section-title {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 50px;
-  color: #222;
+
+h1, h2, h3 {
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: var(--primary-color);
 }
-.tour-videos {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
+
+h2 {
+    text-align: center;
+    font-size: 2.5em;
+    padding-bottom: 10px;
+    margin-bottom: 40px;
 }
-/* Main Video */
-.main-video {
-  position: relative;
-  flex: 1 1 100%;
-  max-width: 800px;
-  overflow: hidden;
-  border-radius: 15px;
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    text-align: center;
 }
-.main-video video {
-  width: 100%;
-  border-radius: 15px;
-  display: block;
+
+/* --- BUTTON STYLES --- */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
 }
-.main-video .video-overlay {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  color: #fff;
+
+.btn-primary {
+    background: var(--accent-color);
+    color: var(--primary-color);
 }
-.main-video .video-overlay h3 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+
+.btn-primary:hover {
+    background: #e6c800;
+    transform: translateY(-2px);
 }
-.main-video .video-overlay p {
-  font-size: 1.2rem;
-  margin-bottom: 15px;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+
+.btn-secondary {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
 }
-.main-video .btn {
-  display: inline-block;
-  padding: 12px 25px;
-  background-color: #ff6600;
-  color: #fff;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: background 0.3s;
+
+.btn-secondary:hover {
+    background: var(--primary-color);
+    color: white;
 }
-.main-video .btn:hover {
-  background-color: #e65c00;
+
+.large-btn {
+    padding: 15px 40px;
+    font-size: 1.1em;
+    margin-top: 30px;
 }
-/* Secondary Videos */
-.secondary-videos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  width: 100%;
-  margin-top: 50px;
+
+
+/* --- 2. HEADER/NAVBAR --- */
+header {
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
 }
-.video-card {
-  position: relative;
-  border-radius: 15px;
-  overflow: hidden;
+
+.logo {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--primary-color);
 }
-.video-card video {
-  width: 100%;
-  border-radius: 15px;
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 400;
+    transition: color 0.3s;
 }
-.video-card .video-overlay {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  color: #fff;
+
+nav a:hover {
+    color: var(--accent-color);
 }
-.video-card h4 {
-  font-size: 1.2rem;
-  margin-bottom: 5px;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+
+.header-cta .lang-switch {
+    margin-right: 20px;
+    font-size: 0.9em;
+    color: #666;
 }
-.btn-small {
-  display: inline-block;
-  padding: 6px 15px;
-  background-color: #ff6600;
-  color: #fff;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  text-decoration: none;
-  transition: background 0.3s;
+
+/* --- 3. HERO SECTION --- */
+.hero-section {
+    background: url('placeholder-hero-bg.jpg') no-repeat center center/cover; /* ใส่ภาพพื้นหลังสวยๆ ที่นี่ */
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    /* Overlay เพื่อให้ข้อความอ่านง่าย */
 }
-.btn-small:hover {
-  background-color: #e65c00;
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); 
 }
-/* Responsive */
-@media(max-width: 768px) {
-  .main-video .video-overlay h3 {
-    font-size: 1.5rem;
-  }
-  .main-video .video-overlay p {
-    font-size: 1rem;
-  }
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+.btn-hero {
+    margin: 0 10px;
+}
+
+
+/* --- 4. WHY CHOOSE US? --- */
+.why-us {
+    background-color: var(--background-light);
+    padding: 80px 0;
+}
+
+.why-us .card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.why-us .card:hover {
+    transform: translateY(-5px);
+}
+
+.icon-large {
+    font-size: 3em;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+}
+
+
+/* --- 5. TRANSFER SERVICES --- */
+.transfer-services {
+    padding-bottom: 80px;
+}
+
+.transfer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.transfer-box {
+    background: var(--background-light);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+.transfer-box h3 {
+    color: var(--accent-color);
+    text-align: center;
+}
+
+.transfer-box ul {
+    list-style: none;
+    margin: 20px 0;
+    font-size: 1.1em;
+}
+
+.transfer-box li {
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.transfer-box .highlight {
+    font-weight: 600;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+
+/* --- 6. TOUR SERVICES (VIDEO FOCUS) --- */
+.tour-services {
+    background-color: var(--background-light);
+    text-align: center;
+}
+
+.tour-subtext {
+    font-size: 1.1em;
+    margin-bottom: 50px;
+}
+
+.tour-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.video-placeholder {
+    height: 180px; /* กำหนดขนาดสำหรับพื้นที่วิดีโอ */
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2em;
+    cursor: pointer;
+    position: relative;
+}
+
+.video-placeholder i {
+    opacity: 0.8;
+}
+
+.tour-card h4 {
+    padding: 15px 10px;
+    margin: 0;
+    font-size: 1.1em;
+    color: var(--primary-color);
+}
+
+
+/* --- 7. OUR FLEET --- */
+.fleet-section {
+    text-align: center;
+    padding-bottom: 80px;
+}
+
+.fleet-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.car-image-placeholder {
+    height: 200px; 
+    background-color: #ccc; /* ใช้สีเทาเป็นตัวแทนรูปภาพรถ */
+    background-image: url('placeholder-car.svg'); /* ควรเปลี่ยนเป็นรูปรถ Camry, MU-X, Commuter VIP จริง */
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.fleet-card h3 {
+    color: var(--accent-color);
+}
+
+
+/* --- 8. TESTIMONIALS --- */
+.reviews-section {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.reviews-section h2 {
+    color: var(--accent-color);
+}
+
+.review-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 8px;
+    font-style: italic;
+    font-size: 1.1em;
+    height: 100%; /* ทำให้กล่องมีความสูงเท่ากัน */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.review-box p {
+    margin-top: 10px;
+    font-style: normal;
+}
+
+
+/* --- 9. CONTACT & FINAL CTA --- */
+.contact-section {
+    background-color: white;
+    padding: 80px 0;
+}
+
+.contact-content {
+    text-align: center;
+}
+
+.contact-content h2 {
+    margin-bottom: 40px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 50px;
+    text-align: left;
+}
+
+.contact-form {
+    background: var(--background-light);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.contact-form h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+}
+
+.contact-form input, .contact-form select, .contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: var(--font-family);
+}
+
+.contact-info {
+    padding: 30px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 8px;
+}
+
+.contact-info h3 {
+    color: var(--accent-color);
+    margin-top: 0;
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.qr-code-placeholder {
+    height: 150px;
+    width: 150px;
+    background-color: white;
+    margin-top: 20px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+/* --- 10. FOOTER --- */
+footer {
+    background: var(--background-dark);
+    color: white;
+    padding: 20px 5%;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9em;
+}
+
+.social-links i {
+    font-size: 1.5em;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+@media (max-width: 900px) {
+    .grid-3, .transfer-grid, .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    .transfer-box {
+        margin-bottom: 20px;
+    }
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px 5%;
+    }
+    nav {
+        margin: 10px 0;
+    }
+    .contact-grid {
+        gap: 30px;
+    }
 }
