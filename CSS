@@ -1,0 +1,125 @@
+/* GENERAL STYLE */
+body {
+    margin: 0;
+    font-family: "Kanit", sans-serif;
+    background: #f7f7f7;
+    color: #333;
+}
+
+/* HERO */
+.hero {
+    background: url('https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1500&q=80')
+                center/cover no-repeat;
+    height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 42px;
+    margin: 0;
+    font-weight: 600;
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.btn-primary {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 14px 28px;
+    background: #ffbd2f;
+    color: #000;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+/* FEATURES */
+.features {
+    padding: 60px 20px;
+    background: #fff;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.feature-box {
+    padding: 25px;
+    background: #fafafa;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+/* PACKAGES */
+.packages {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.package-card {
+    background: white;
+    padding: 25px;
+    margin: 20px auto;
+    max-width: 500px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+.package-card .price {
+    display: block;
+    margin-top: 10px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #ff9425;
+}
+
+/* CONTACT */
+.contact {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.btn-whatsapp, .btn-call {
+    display: block;
+    margin: 12px auto;
+    padding: 15px 25px;
+    max-width: 300px;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.btn-whatsapp {
+    background: #25D366;
+}
+
+.btn-call {
+    background: #ff7b00;
+}
+
+/* FOOTER */
+footer {
+    padding: 20px;
+    text-align: center;
+    background: #111;
+    color: white;
+}
