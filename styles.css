@@ -1,125 +1,132 @@
-/* GENERAL STYLE */
+/* Tour Section Styles */
 body {
-    margin: 0;
-    font-family: "Kanit", sans-serif;
-    background: #f7f7f7;
-    color: #333;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
 }
 
-/* HERO */
-.hero {
-    background: url('https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1500&q=80')
-                center/cover no-repeat;
-    height: 75vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    padding: 0 20px;
+.tour-section {
+  padding: 80px 20px;
+  background-color: #f9f9f9;
 }
 
-.hero-content h1 {
-    font-size: 42px;
-    margin: 0;
-    font-weight: 600;
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #222;
 }
 
-.hero-content p {
-    font-size: 20px;
-    margin-top: 10px;
+.tour-videos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
 }
 
-.btn-primary {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 14px 28px;
-    background: #ffbd2f;
-    color: #000;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: 600;
+/* Main Video */
+.main-video {
+  position: relative;
+  flex: 1 1 100%;
+  max-width: 800px;
+  overflow: hidden;
+  border-radius: 15px;
 }
 
-/* FEATURES */
-.features {
-    padding: 60px 20px;
-    background: #fff;
-    text-align: center;
+.main-video video {
+  width: 100%;
+  border-radius: 15px;
+  display: block;
 }
 
-.features h2 {
-    font-size: 32px;
-    margin-bottom: 30px;
+.main-video .video-overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: #fff;
 }
 
-.feature-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+.main-video .video-overlay h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
 }
 
-.feature-box {
-    padding: 25px;
-    background: #fafafa;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+.main-video .video-overlay p {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
 }
 
-/* PACKAGES */
-.packages {
-    padding: 60px 20px;
-    text-align: center;
+.main-video .btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #ff6600;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s;
 }
 
-.package-card {
-    background: white;
-    padding: 25px;
-    margin: 20px auto;
-    max-width: 500px;
-    border-radius: 12px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+.main-video .btn:hover {
+  background-color: #e65c00;
 }
 
-.package-card .price {
-    display: block;
-    margin-top: 10px;
-    font-size: 22px;
-    font-weight: 600;
-    color: #ff9425;
+/* Secondary Videos */
+.secondary-videos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  width: 100%;
+  margin-top: 50px;
 }
 
-/* CONTACT */
-.contact {
-    background: #222;
-    color: white;
-    text-align: center;
-    padding: 60px 20px;
+.video-card {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
 }
 
-.btn-whatsapp, .btn-call {
-    display: block;
-    margin: 12px auto;
-    padding: 15px 25px;
-    max-width: 300px;
-    text-decoration: none;
-    color: #fff;
-    border-radius: 8px;
-    font-weight: 600;
+.video-card video {
+  width: 100%;
+  border-radius: 15px;
 }
 
-.btn-whatsapp {
-    background: #25D366;
+.video-card .video-overlay {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: #fff;
 }
 
-.btn-call {
-    background: #ff7b00;
+.video-card h4 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
 }
 
-/* FOOTER */
-footer {
-    padding: 20px;
-    text-align: center;
-    background: #111;
-    color: white;
+.btn-small {
+  display: inline-block;
+  padding: 6px 15px;
+  background-color: #ff6600;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn-small:hover {
+  background-color: #e65c00;
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+  .main-video .video-overlay h3 {
+    font-size: 1.5rem;
+  }
+  .main-video .video-overlay p {
+    font-size: 1rem;
+  }
 }
