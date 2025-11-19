@@ -1,78 +1,185 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tour Service</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Thai Journeys - บริการรับ-ส่งและทัวร์ส่วนตัว</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
-<!-- Tour Service Section -->
-<section class="tour-section">
-  <div class="container">
-    <h2 class="section-title">Our Exclusive Tours</h2>
-    <div class="tour-videos">
+    <header>
+        <div class="logo">Premium Thai Journeys</div>
+        <nav>
+            <a href="#transfer">บริการรับ-ส่ง</a>
+            <a href="#tours">🎥 ทัวร์วิดีโอ</a>
+            <a href="#fleet">🚘 รถของเรา</a>
+            <a href="#contact">📞 ติดต่อเรา</a>
+        </nav>
+        <div class="header-cta">
+            <span class="lang-switch">TH | EN</span>
+            <a href="#contact" class="btn btn-primary">จองตอนนี้!</a>
+        </div>
+    </header>
 
-      <!-- Main Video -->
-      <div class="main-video">
-        <video src="videos/damnoen.mp4" poster="images/damnoen.jpg" controls></video>
-        <div class="video-overlay">
-          <h3>Damnoen Saduak Floating Market</h3>
-          <p>Experience the riverside culture up close</p>
-          <a href="#booking" class="btn">Book Now</a>
+    <section id="hero" class="hero-section">
+        <div class="hero-content">
+            <h1>ยกระดับทุกการเดินทางของคุณ: <br>บริการรับ-ส่ง และทัวร์ส่วนตัวระดับพรีเมียม</h1>
+            <p>สัมผัสประสบการณ์การเดินทางที่เหนือกว่า ด้วยยานพาหนะสุดหรู คนขับมืออาชีพ และเส้นทางที่ออกแบบมาเพื่อคุณ</p>
+            <a href="#contact" class="btn btn-hero">จองบริการเลย!</a>
+            <a href="#tours" class="btn btn-secondary">ชมวิดีโอทัวร์</a>
         </div>
-      </div>
+    </section>
 
-      <!-- Secondary Videos -->
-      <div class="secondary-videos">
-        <div class="video-card">
-          <video src="videos/ayutthaya.mp4" poster="images/ayutthaya.jpg" controls></video>
-          <div class="video-overlay">
-            <h4>Ayutthaya Temple Tour</h4>
-            <a href="#booking" class="btn-small">Book Now</a>
-          </div>
+    <section id="why-us" class="container why-us">
+        <h2>เพราะทุกการเดินทางของคุณคือคนสำคัญ</h2>
+        <div class="grid-3">
+            <div class="card">
+                <i class="fas fa-shield-alt icon-large"></i>
+                <h3>ความปลอดภัยอันดับ 1</h3>
+                <p>คนขับมืออาชีพ ผ่านการอบรมอย่างเข้มงวด มั่นใจทุกเส้นทาง</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-car-side icon-large"></i>
+                <h3>ยานพาหนะระดับพรีเมียม</h3>
+                <p>รถใหม่ สะอาด หรูหรา หลากหลายรุ่น รองรับทุกความต้องการ</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-headset icon-large"></i>
+                <h3>บริการตรงเวลา 24/7</h3>
+                <p>พร้อมให้บริการตลอดเวลา ไม่ว่าจะกลางวันหรือกลางคืน</p>
+            </div>
         </div>
-        <div class="video-card">
-          <video src="videos/kanchanaburi.mp4" poster="images/kanchanaburi.jpg" controls></video>
-          <div class="video-overlay">
-            <h4>Kanchanaburi Tour</h4>
-            <a href="#booking" class="btn-small">Book Now</a>
-          </div>
-        </div>
-        <div class="video-card">
-          <video src="videos/safari.mp4" poster="images/safari.jpg" controls></video>
-          <div class="video-overlay">
-            <h4>Safari Tour</h4>
-            <a href="#booking" class="btn-small">Book Now</a>
-          </div>
-        </div>
-        <div class="video-card">
-          <video src="videos/suan-siam.mp4" poster="images/suan-siam.jpg" controls></video>
-          <div class="video-overlay">
-            <h4>Suan Siam Tour</h4>
-            <a href="#booking" class="btn-small">Book Now</a>
-          </div>
-        </div>
-        <div class="video-card">
-          <video src="videos/wangnai.mp4" poster="images/wangnai.jpg" controls></video>
-          <div class="video-overlay">
-            <h4>Wang Nai Temple Tour</h4>
-            <a href="#booking" class="btn-small">Book Now</a>
-          </div>
-        </div>
-        <div class="video-card">
-          <video src="videos/canal.mp4" poster="images/canal.jpg" controls></video>
-          <div class="video-overlay">
-            <h4>Canal Tour</h4>
-            <a href="#booking" class="btn-small">Book Now</a>
-          </div>
-        </div>
-      </div>
+    </section>
 
-    </div>
-  </div>
-</section>
+    <section id="transfer" class="container transfer-services">
+        <h2>✈️ บริการรับ-ส่งส่วนตัว: สะดวกสบาย ไร้กังวล</h2>
+        <div class="transfer-grid">
+            <div class="transfer-box">
+                <h3>รับ-ส่ง สนามบิน</h3>
+                <ul>
+                    <li>สุวรรณภูมิ &harr; กทม.</li>
+                    <li>ดอนเมือง &harr; กทม.</li>
+                </ul>
+                <p class="highlight">**จุดเด่น:** ตรงเวลา 100% พร้อมป้ายรับชัดเจน</p>
+            </div>
+            <div class="transfer-box">
+                <h3>เดินทางสู่เมืองหลัก (ไป-กลับ)</h3>
+                <ul>
+                    <li>กทม. - พัทยา - กทม.</li>
+                    <li>กทม. - หัวหิน - กทม.</li>
+                    <li>กทม. - ระยอง - กทม.</li>
+                    <li>กทม. - อยุธยา - กทม.</li>
+                    <li>กทม. - กาญจนบุรี - กทม.</li>
+                </ul>
+                <a href="#contact" class="btn btn-secondary">สอบถามเส้นทางพิเศษ</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="tours" class="container tour-services">
+        <h2>🎥 ทัวร์ส่วนตัวแบบ Exclusive: ประสบการณ์ที่น่าจดจำ</h2>
+        <p class="tour-subtext">ชมวิดีโอตัวอย่าง และเตรียมพร้อมสำหรับทริปสุดพิเศษที่คุณเลือกเองได้!</p>
+        <div class="grid-3">
+            <div class="tour-card">
+                <div class="video-placeholder"><i class="fas fa-play"></i></div>
+                <h4>ทัวร์ตลาดน้ำดำเนินสะดวก</h4>
+            </div>
+            <div class="tour-card">
+                <div class="video-placeholder"><i class="fas fa-play"></i></div>
+                <h4>ทัวร์วัดวังใน กทม. & Canal Tour</h4>
+            </div>
+            <div class="tour-card">
+                <div class="video-placeholder"><i class="fas fa-play"></i></div>
+                <h4>ทัวร์มรดกโลกอยุธยา</h4>
+            </div>
+            <div class="tour-card">
+                <div class="video-placeholder"><i class="fas fa-play"></i></div>
+                <h4>ทัวร์กาญจนบุรี</h4>
+            </div>
+            <div class="tour-card">
+                <div class="video-placeholder"><i class="fas fa-play"></i></div>
+                <h4>ทัวร์ซาฟารีเวิลด์</h4>
+            </div>
+            <div class="tour-card">
+                <div class="video-placeholder"><i class="fas fa-play"></i></div>
+                <h4>ทัวร์สวนสยามทะเลกรุงเทพฯ</h4>
+            </div>
+        </div>
+        <a href="#contact" class="btn btn-primary large-btn">ออกแบบทัวร์ในฝันของคุณ!</a>
+    </section>
+
+    <section id="fleet" class="container fleet-section">
+        <h2>🚘 ยานพาหนะของเรา: ความสะดวกสบายที่แตกต่าง</h2>
+        <div class="grid-3">
+            <div class="fleet-card">
+                <div class="car-image-placeholder"></div>
+                <h3>Toyota Camry (4 ที่นั่ง)</h3>
+                <p>เหมาะสำหรับ: คู่รัก, ทริปธุรกิจขนาดเล็ก เน้นความเป็นส่วนตัว</p>
+                <a href="#contact" class="btn btn-secondary">จองรถรุ่นนี้</a>
+            </div>
+            <div class="fleet-card">
+                <div class="car-image-placeholder"></div>
+                <h3>Isuzu MU-X (7 ที่นั่ง)</h3>
+                <p>เหมาะสำหรับ: ครอบครัว, กลุ่มเพื่อนขนาดเล็ก หรือผู้ที่ต้องการพื้นที่สัมภาระเยอะ</p>
+                <a href="#contact" class="btn btn-secondary">จองรถรุ่นนี้</a>
+            </div>
+            <div class="fleet-card">
+                <div class="car-image-placeholder"></div>
+                <h3>Toyota Commuter VIP (8-9 ที่นั่ง)</h3>
+                <p>เหมาะสำหรับ: กรุ๊ปทัวร์, ทริปครอบครัวใหญ่ พร้อมสิ่งอำนวยความสะดวกครบครัน</p>
+                <a href="#contact" class="btn btn-secondary">จองรถรุ่นนี้</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" class="container reviews-section">
+        <h2>🗣️ สิ่งที่ลูกค้าของเราพูดถึง</h2>
+        <div class="grid-3">
+            <div class="review-box">⭐⭐⭐⭐⭐<p>"ยอดเยี่ยมมาก! คนขับสุภาพ รถสะอาด ตรงเวลาทุกครั้งที่ใช้บริการ"</p></div>
+            <div class="review-box">⭐⭐⭐⭐⭐<p>"ทัวร์อยุธยากับทีมงานนี้สนุกมาก! ได้ความรู้และภาพสวยๆ กลับไปเพียบ"</p></div>
+            <div class="review-box">⭐⭐⭐⭐⭐<p>"บริการดีเกินคาด รถ VIP สะดวกสบายมาก ลูกๆ ชอบมากเลยค่ะ"</p></div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container contact-content">
+            <h2>พร้อมยกระดับการเดินทางของคุณหรือยัง?</h2>
+            <div class="contact-grid">
+                <form class="contact-form">
+                    <h3>รับใบเสนอราคาภายใน 15 นาที!</h3>
+                    <input type="text" placeholder="ชื่อ*" required>
+                    <input type="text" placeholder="เบอร์โทร/Line ID*" required>
+                    <select required>
+                        <option value="">บริการที่สนใจ*</option>
+                        <option value="transfer">รับ-ส่ง</option>
+                        <option value="tour">ทัวร์</option>
+                        <option value="other">เช่ารถพร้อมคนขับ</option>
+                    </select>
+                    <textarea placeholder="ข้อความเพิ่มเติม"></textarea>
+                    <button type="submit" class="btn btn-primary large-btn">ส่งข้อมูล & รอการติดต่อกลับ</button>
+                </form>
+                <div class="contact-info">
+                    <h3>ติดต่อเราโดยตรง</h3>
+                    <p><i class="fas fa-phone"></i> **โทร:** +66 (0)X XXX XXXX</p>
+                    <p><i class="fab fa-line"></i> **Line ID:** @PremiumThaiJourneys</p>
+                    <p><i class="fas fa-envelope"></i> **Email:** info@premiumthaijourneys.com</p>
+                    <div class="qr-code-placeholder"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Premium Thai Journeys. All rights reserved.</p>
+        <div class="social-links">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-line"></i>
+        </div>
+    </footer>
 
 </body>
 </html>
