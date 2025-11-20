@@ -488,7 +488,7 @@ footer {
     background: var(--primary-dark);
     color: white;
     /* --- EDITED: Smaller Padding and Font Size --- */
-    padding: 5px 5%; 
+    padding: 10px 5%; 
     font-size: 0.75em; 
 }
 .footer-bottom-single {
