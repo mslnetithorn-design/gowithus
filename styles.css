@@ -92,8 +92,8 @@ a {
 .btn-hero-whatsapp {
     background: var(--whatsapp-green);
     color: white;
-    padding: 15px 40px;
-    font-size: 1.2em;
+    padding: 12px 30px;
+    font-size: 1.1em;
     box-shadow: 0 5px 15px rgba(0,0,0,0.4);
     margin-top: 20px;
 }
@@ -195,11 +195,11 @@ header nav a:hover {
     height: 85vh; 
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
+    justify-content: flex-start;
+    text-align: left;
     color: white;
     position: relative;
-    padding: 20px; 
+    padding: 20px 5%; 
 }
 .hero-section::before {
     content: '';
@@ -215,16 +215,17 @@ header nav a:hover {
     position: relative;
     z-index: 10;
     max-width: 900px;
+    text-align: left;
 }
 .hero-content h1 {
-    font-size: 3.8em;
-    margin-bottom: 25px;
+    font-size: 3.2em;
+    margin-bottom: 15px;
     color: white;
     line-height: 1.2;
 }
 .hero-content p {
-    font-size: 1.3em;
-    margin-bottom: 40px;
+    font-size: 1.1em;
+    margin-bottom: 30px;
     font-weight: 300;
     color: rgba(255, 255, 255, 0.9);
 }
