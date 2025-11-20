@@ -65,7 +65,7 @@ a {
 .btn {
     display: inline-block;
     padding: 12px 25px;
-    border-radius: 50px; /* Rounded buttons for modern look */
+    border-radius: 50px; 
     font-weight: 600;
     transition: all 0.3s ease;
     border: none;
@@ -81,7 +81,7 @@ a {
     font-size: 1em;
 }
 .btn-whatsapp:hover {
-    background: #128C7E; /* Darker green */
+    background: #128C7E; 
     transform: translateY(-2px);
 }
 .btn-whatsapp i {
@@ -110,7 +110,7 @@ a {
     display: inline-block;
     padding: 15px 40px;
     font-size: 1.1em;
-    border-radius: 5px; /* Less rounded for section CTA */
+    border-radius: 5px; 
 }
 .btn-view-details-cta:hover {
     background: var(--accent-gold);
@@ -483,12 +483,13 @@ header nav a:hover {
 }
 
 
-/* --- Footer --- */
+/* --- Footer (COMPACT) --- */
 footer {
     background: var(--primary-dark);
     color: white;
-    padding: 15px 5%;
-    font-size: 0.8em;
+    /* --- EDITED: Smaller Padding and Font Size --- */
+    padding: 10px 5%; 
+    font-size: 0.75em; 
 }
 .footer-bottom-single {
     text-align: center;
@@ -531,7 +532,7 @@ footer {
         padding-top: 40px;
     }
     .icon-circle {
-        display: none; /* Hide icon circle on small screens to save space */
+        display: none; 
     }
 }
 
