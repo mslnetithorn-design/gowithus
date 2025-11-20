@@ -1,12 +1,12 @@
 /* --- Global Styles & Variables --- */
 :root {
-    --primary-dark: #002d3e; /* Darker blue/grey for header/footer */
-    --primary-light: #004d40; /* Main dark color for text/elements */
-    --accent-gold: #f5af19; /* Gold for highlights/CTAs */
+    --primary-dark: #002d3e; 
+    --primary-light: #004d40; 
+    --accent-gold: #f5af19; 
+    --whatsapp-green: #25D366; 
     --text-dark: #333;
     --text-light: #666;
-    --bg-light-grey: #f8f8f8; /* Light grey background for sections */
-    --bg-mid-grey: #e0e0e0; /* Slightly darker grey for some elements */
+    --bg-light-grey: #f8f8f8; 
     --font-primary: 'Montserrat', sans-serif;
     --font-secondary: 'Kanit', sans-serif;
 }
@@ -61,11 +61,11 @@ a {
     gap: 30px;
 }
 
-/* --- Buttons --- */
+/* --- Buttons (WhatsApp Focus) --- */
 .btn {
     display: inline-block;
     padding: 12px 25px;
-    border-radius: 5px;
+    border-radius: 50px; /* Rounded buttons for modern look */
     font-weight: 600;
     transition: all 0.3s ease;
     border: none;
@@ -73,73 +73,81 @@ a {
     text-align: center;
 }
 
-.btn-book-now {
-    background: var(--accent-gold);
-    color: var(--primary-dark);
+/* Header WhatsApp CTA */
+.btn-whatsapp {
+    background: var(--whatsapp-green);
+    color: white;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    font-size: 1em;
 }
-.btn-book-now:hover {
-    background: #e6a000;
+.btn-whatsapp:hover {
+    background: #128C7E; /* Darker green */
     transform: translateY(-2px);
 }
-
-.btn-hero-primary {
-    background: var(--accent-gold);
-    color: var(--primary-dark);
-    padding: 15px 35px;
-    font-size: 1.1em;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    border: 1px solid var(--accent-gold);
-    margin: 0 10px;
-}
-.btn-hero-primary:hover {
-    background: #e6a000;
-    transform: translateY(-3px);
+.btn-whatsapp i {
+    margin-right: 8px;
 }
 
-.btn-hero-secondary {
-    background: rgba(255, 255, 255, 0.2);
+/* Hero Section CTA */
+.btn-hero-whatsapp {
+    background: var(--whatsapp-green);
     color: white;
-    padding: 15px 35px;
-    font-size: 1.1em;
-    border: 1px solid white;
-    margin: 0 10px;
+    padding: 15px 40px;
+    font-size: 1.2em;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+    margin-top: 20px;
 }
-.btn-hero-secondary:hover {
-    background: white;
-    color: var(--primary-dark);
+.btn-hero-whatsapp:hover {
+    background: #128C7E;
+    transform: scale(1.05);
 }
 
-.btn-view-details {
+/* Transfer/Fleet CTA */
+.btn-view-details-cta {
     background: var(--primary-dark);
     color: white;
-    margin-top: 20px;
+    margin-top: 40px;
     display: inline-block;
-    padding: 10px 20px;
+    padding: 15px 40px;
+    font-size: 1.1em;
+    border-radius: 5px; /* Less rounded for section CTA */
 }
-.btn-view-details:hover {
+.btn-view-details-cta:hover {
     background: var(--accent-gold);
     color: var(--primary-dark);
 }
 
-.btn-view-detail-small {
-    background: var(--primary-light);
+/* Tour Card CTA */
+.btn-view-detail-small-whatsapp {
+    background: var(--whatsapp-green);
     color: white;
-    padding: 5px 10px;
-    border-radius: 3px;
-    font-size: 0.8em;
-    margin-top: 10px;
-    position: absolute; /* Changed to absolute for proper positioning */
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    position: absolute; 
     bottom: 10px;
     right: 10px;
     opacity: 0.9;
 }
-.btn-view-detail-small:hover {
+.btn-view-detail-small-whatsapp:hover {
     opacity: 1;
-    background: var(--accent-gold);
-    color: var(--primary-dark);
+    background: #128C7E;
 }
 
+/* Final Contact CTA */
+.btn-final-whatsapp {
+    background: var(--whatsapp-green);
+    color: white;
+    padding: 20px 50px;
+    font-size: 1.5em;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    margin-top: 30px;
+    border-radius: 10px;
+}
+.btn-final-whatsapp:hover {
+    background: #128C7E;
+    transform: scale(1.05);
+}
 
 /* --- Header --- */
 header {
@@ -165,7 +173,7 @@ header .logo {
 header .logo img {
     margin-right: 10px;
     border-radius: 5px;
-    height: 40px; /* Adjust logo size */
+    height: 40px; 
     width: 40px;
 }
 
@@ -177,38 +185,21 @@ header nav a {
     transition: color 0.3s;
     font-size: 0.95em;
 }
-header nav a:hover, header nav a.active {
+header nav a:hover {
     color: var(--accent-gold);
 }
 
-.header-cta {
-    display: flex;
-    align-items: center;
-}
-.header-cta .btn-book-now {
-    margin-right: 20px;
-}
-.lang-switch img {
-    width: 20px;
-    height: 15px;
-    margin-left: 5px;
-    cursor: pointer;
-    border: 1px solid rgba(255,255,255,0.3);
-    border-radius: 2px;
-}
-
-
 /* --- Hero Section --- */
 .hero-section {
-    background: url('images/hero_bg.jpg') no-repeat center center/cover; /* เปลี่ยนเป็นรูปจริง */
-    height: 85vh; /* Adjusted height */
+    background: url('images/hero_bg.jpg') no-repeat center center/cover;
+    height: 85vh; 
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
     position: relative;
-    padding: 20px; /* Add padding for smaller screens */
+    padding: 20px; 
 }
 .hero-section::before {
     content: '';
@@ -217,7 +208,7 @@ header nav a:hover, header nav a.active {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.4); 
+    background: rgba(0, 0, 0, 0.5); 
 }
 
 .hero-content {
@@ -239,7 +230,7 @@ header nav a:hover, header nav a.active {
 }
 
 
-/* --- Private Transfers Section --- */
+/* --- Private Transfers Section (Services) --- */
 .private-transfers-section {
     background-color: white;
     padding: 80px 0;
@@ -276,16 +267,6 @@ header nav a:hover, header nav a.active {
     color: var(--primary-light);
     margin-bottom: 15px;
 }
-.feature-card h3 {
-    font-size: 1.4em;
-    margin-bottom: 10px;
-    color: var(--primary-dark);
-}
-.feature-card p {
-    color: var(--text-light);
-    font-size: 0.95em;
-}
-
 
 /* --- Transfer Details Section --- */
 .transfer-details-section {
@@ -305,7 +286,7 @@ header nav a:hover, header nav a.active {
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     text-align: left;
     position: relative;
-    padding-top: 80px; /* Space for icon circle */
+    padding-top: 80px; 
 }
 .icon-circle {
     background: var(--primary-dark);
@@ -318,7 +299,7 @@ header nav a:hover, header nav a.active {
     align-items: center;
     font-size: 2.2em;
     position: absolute;
-    top: -35px; /* Half of height to appear centered on top edge */
+    top: -35px; 
     left: 50%;
     transform: translateX(-50%);
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
@@ -347,13 +328,9 @@ header nav a:hover, header nav a.active {
     margin-top: 20px;
 }
 
-
-/* --- Tours Section (Home Page Gallery) --- */
+/* --- Tours Section (Gallery) --- */
 .tours-section {
     padding: 80px 0;
-}
-.tours-section h2 {
-    text-align: center;
 }
 .tours-section h2 i {
     color: var(--accent-gold);
@@ -369,9 +346,9 @@ header nav a:hover, header nav a.active {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    position: relative; /* Added for absolute positioning of button */
+    position: relative;
 }
-.tour-gallery-item img, .tour-gallery-item video {
+.tour-gallery-item img {
     width: 100%;
     height: 180px;
     object-fit: cover;
@@ -380,27 +357,24 @@ header nav a:hover, header nav a.active {
 .tour-info {
     padding: 15px 10px;
     text-align: left;
-    padding-bottom: 50px; /* Space for button */
+    padding-bottom: 50px; 
 }
 .tour-info h4 {
     font-size: 1.1em;
     color: var(--primary-dark);
     margin-bottom: 5px;
 }
-.tour-info p {
-    font-size: 0.9em;
-    color: var(--text-light);
-}
 
 
-/* --- Our Fleet Section (Home Page Snippet) --- */
+/* --- Our Fleet Section --- */
 .fleet-section {
     background-color: var(--bg-light-grey);
     padding: 80px 0;
     text-align: center;
 }
-.fleet-section h2 {
-    text-align: center;
+.fleet-section h2 i {
+    color: var(--accent-gold);
+    margin-right: 15px;
 }
 .fleet-card {
     background: white;
@@ -433,19 +407,19 @@ header nav a:hover, header nav a.active {
 
 /* --- Reviews Section --- */
 .reviews-section {
-    background: linear-gradient(to right, #e0f2f1, #c8e6c9); /* Light green gradient */
+    background: linear-gradient(to right, #e0f2f1, #c8e6c9); 
     padding: 80px 0;
     text-align: center;
 }
-.reviews-section h2 {
+.reviews-section h2 i {
     color: var(--primary-dark);
+    margin-right: 15px;
 }
 .review-box {
     background: white;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    text-align: center;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -470,7 +444,7 @@ header nav a:hover, header nav a.active {
     color: var(--text-dark);
     margin-bottom: 15px;
     font-family: var(--font-secondary);
-    flex-grow: 1; /* Make paragraph take available space */
+    flex-grow: 1; 
 }
 .stars {
     color: var(--accent-gold);
@@ -478,88 +452,65 @@ header nav a:hover, header nav a.active {
 }
 
 
+/* --- Contact (Final CTA Section) --- */
+.contact-section {
+    background-color: var(--primary-dark);
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+}
+.contact-section h2 {
+    color: var(--accent-gold);
+}
+.contact-section p {
+    font-size: 1.2em;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 20px;
+}
+.contact-info {
+    margin-top: 40px;
+    font-size: 1.1em;
+}
+.contact-info .phone-number {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: white;
+    margin: 10px 0;
+}
+.contact-info i {
+    margin-right: 10px;
+    color: var(--accent-gold);
+}
+
+
 /* --- Footer --- */
 footer {
     background: var(--primary-dark);
     color: white;
-    padding: 50px 0 20px 0;
-    font-size: 0.9em;
+    padding: 15px 5%;
+    font-size: 0.8em;
 }
-.footer-content {
-    display: flex;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
-    justify-content: space-between;
-    gap: 30px;
-    margin-bottom: 30px;
-}
-.footer-col {
-    flex: 1;
-    min-width: 200px; /* Minimum width for columns */
-}
-.footer-col h3 {
-    color: var(--accent-gold);
-    margin-bottom: 20px;
-    font-size: 1.2em;
-}
-.footer-col p, .footer-col ul {
-    color: rgba(255, 255, 255, 0.8);
-    list-style: none;
-    padding: 0;
-}
-.footer-col ul li {
-    margin-bottom: 10px;
-}
-.footer-col a {
-    color: rgba(255, 255, 255, 0.8);
-    transition: color 0.3s;
-}
-.footer-col a:hover {
-    color: var(--accent-gold);
-}
-.footer-logo-col {
-    flex: 1.5; /* Make logo column slightly wider */
-}
-.footer-logo-col img {
-    margin-right: 10px;
-    border-radius: 5px;
-    vertical-align: middle;
-    height: 40px; /* Adjust logo size */
-    width: 40px;
-}
-.footer-logo-col .social-links {
-    margin-top: 20px;
-}
-.footer-logo-col .social-links a {
-    font-size: 1.5em;
-    margin-right: 15px;
-    color: rgba(255, 255, 255, 0.7);
-}
-.footer-logo-col .social-links a:hover {
-    color: var(--accent-gold);
-}
-
-.footer-bottom {
+.footer-bottom-single {
     text-align: center;
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
     color: rgba(255, 255, 255, 0.6);
 }
 
 
 /* --- Responsive Adjustments --- */
 @media (max-width: 992px) {
-    header nav {
-        display: none; /* Hide main nav on smaller screens, consider a hamburger menu */
-    }
+    /* Header adjustments for smaller screens */
     header {
-        justify-content: center; /* Center header content */
+        flex-direction: column;
+        padding: 10px 5% 15px 5%;
+    }
+    header nav {
+        margin: 10px 0;
     }
     .header-cta {
-        position: absolute; /* Position CTAs */
-        right: 15px;
-        top: 10px;
+        position: static;
+        margin-top: 10px;
     }
+    
     .hero-content h1 {
         font-size: 2.8em;
     }
@@ -576,5 +527,23 @@ footer {
     .transfer-grid-2 {
         grid-template-columns: 1fr;
     }
-    .footer-content {
-        flex-direction: column;
+    .transfer-type-card {
+        padding-top: 40px;
+    }
+    .icon-circle {
+        display: none; /* Hide icon circle on small screens to save space */
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-content h1 {
+        font-size: 2.2em;
+    }
+    .hero-content p {
+        font-size: 1em;
+    }
+    .btn-hero-whatsapp {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+}
