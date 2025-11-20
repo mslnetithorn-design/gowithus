@@ -1,11 +1,14 @@
-/* --- 1. GLOBAL STYLES & VARIABLES --- */
+/* --- Global Styles & Variables --- */
 :root {
-    --primary-color: #004d40; /* Dark Teal / Navy - ใช้เป็นสีหลัก */
-    --accent-color: #ffd700; /* Gold - ใช้เป็นสีเน้น/CTA */
-    --background-light: #f4f4f4; /* สีเทาอ่อนสำหรับพื้นหลังส่วนต่าง ๆ */
-    --background-dark: #1a1a1a; /* สีดำเข้มสำหรับ Hero/Footer */
-    --text-color: #333;
-    --font-family: 'Kanit', sans-serif;
+    --primary-dark: #002d3e; /* Darker blue/grey for header/footer */
+    --primary-light: #004d40; /* Main dark color for text/elements */
+    --accent-gold: #f5af19; /* Gold for highlights/CTAs */
+    --text-dark: #333;
+    --text-light: #666;
+    --bg-light-grey: #f8f8f8; /* Light grey background for sections */
+    --bg-mid-grey: #e0e0e0; /* Slightly darker grey for some elements */
+    --font-primary: 'Montserrat', sans-serif;
+    --font-secondary: 'Kanit', sans-serif;
 }
 
 * {
@@ -15,9 +18,9 @@
 }
 
 body {
-    font-family: var(--font-family);
+    font-family: var(--font-primary);
     line-height: 1.6;
-    color: var(--text-color);
+    color: var(--text-dark);
     background-color: white;
     scroll-behavior: smooth;
 }
@@ -29,69 +32,118 @@ body {
     padding: 60px 0;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
+    font-family: var(--font-primary);
+    color: var(--primary-dark);
     margin-bottom: 20px;
     font-weight: 700;
-    color: var(--primary-color);
 }
 
 h2 {
+    font-size: 2.2em;
     text-align: center;
-    font-size: 2.5em;
-    padding-bottom: 10px;
     margin-bottom: 40px;
+}
+
+p {
+    font-family: var(--font-secondary);
+    color: var(--text-light);
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-light);
 }
 
 .grid-3 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
     text-align: center;
 }
 
-/* --- BUTTON STYLES --- */
-.btn {
-    display: inline-block;
-    padding: 12px 30px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: 600;
-    transition: all 0.3s;
-    border: none;
-    cursor: pointer;
+.btn-book-now {
+    background: var(--accent-gold);
+    color: var(--primary-dark);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
-
-.btn-primary {
-    background: var(--accent-color);
-    color: var(--primary-color);
-}
-
-.btn-primary:hover {
-    background: #e6c800;
+.btn-book-now:hover {
+    background: #e6a000;
     transform: translateY(-2px);
 }
 
-.btn-secondary {
-    background: transparent;
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color);
-}
-
-.btn-secondary:hover {
-    background: var(--primary-color);
-    color: white;
-}
-
-.large-btn {
-    padding: 15px 40px;
+.btn-hero-primary {
+    background: var(--accent-gold);
+    color: var(--primary-dark);
+    padding: 15px 35px;
     font-size: 1.1em;
-    margin-top: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    border: 1px solid var(--accent-gold);
+    margin: 0 10px;
+}
+.btn-hero-primary:hover {
+    background: #e6a000;
+    transform: translateY(-3px);
+}
+
+.btn-hero-secondary {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 15px 35px;
+    font-size: 1.1em;
+    border: 1px solid white;
+    margin: 0 10px;
+}
+.btn-hero-secondary:hover {
+    background: white;
+    color: var(--primary-dark);
+}
+
+.btn-view-details {
+    background: var(--primary-dark);
+    color: white;
+    margin-top: 20px;
+    display: inline-block;
+    padding: 10px 20px;
+}
+.btn-view-details:hover {
+    background: var(--accent-gold);
+    color: var(--primary-dark);
+}
+
+.btn-view-detail-small {
+    background: var(--primary-light);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 0.8em;
+    margin-top: 10px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    opacity: 0.9;
+}
+.btn-view-detail-small:hover {
+    opacity: 1;
+    background: var(--accent-gold);
+    color: var(--primary-dark);
 }
 
 
-/* --- 2. HEADER/NAVBAR --- */
+/* --- Header --- */
 header {
-    background: white;
+    background: var(--primary-dark);
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     position: sticky;
     top: 0;
@@ -99,44 +151,62 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 5%;
+    padding: 10px 5%;
+    color: white;
 }
 
-.logo {
-    font-size: 1.5em;
+header .logo {
+    font-size: 1.4em;
     font-weight: 700;
-    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    color: white;
+}
+header .logo img {
+    margin-right: 10px;
+    border-radius: 5px;
 }
 
-nav a {
-    color: var(--text-color);
+header nav a {
+    color: white;
     text-decoration: none;
     margin: 0 15px;
     font-weight: 400;
     transition: color 0.3s;
+    font-size: 0.95em;
+}
+header nav a:hover {
+    color: var(--accent-gold);
 }
 
-nav a:hover {
-    color: var(--accent-color);
+.header-cta {
+    display: flex;
+    align-items: center;
 }
-
-.header-cta .lang-switch {
+.header-cta .btn-book-now {
     margin-right: 20px;
-    font-size: 0.9em;
-    color: #666;
+}
+.lang-switch img {
+    width: 20px;
+    height: 15px;
+    margin-left: 5px;
+    cursor: pointer;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 2px;
 }
 
-/* --- 3. HERO SECTION --- */
+
+/* --- Hero Section --- */
 .hero-section {
-    background: url('placeholder-hero-bg.jpg') no-repeat center center/cover; /* ใส่ภาพพื้นหลังสวยๆ ที่นี่ */
-    height: 90vh;
+    background: url('https://via.placeholder.com/1920x800/222222/ffffff?text=Premium+Transfer+Background') no-repeat center center/cover;
+    height: 85vh; /* Adjusted height */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
     position: relative;
-    /* Overlay เพื่อให้ข้อความอ่านง่าย */
+    padding: 20px; /* Add padding for smaller screens */
 }
 .hero-section::before {
     content: '';
@@ -145,302 +215,385 @@ nav a:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5); 
+    background: rgba(0, 0, 0, 0.4); 
 }
 
 .hero-content {
     position: relative;
     z-index: 10;
-    max-width: 800px;
+    max-width: 900px;
 }
-
 .hero-content h1 {
-    font-size: 3.5em;
-    margin-bottom: 20px;
+    font-size: 3.8em;
+    margin-bottom: 25px;
     color: white;
+    line-height: 1.2;
 }
-
 .hero-content p {
-    font-size: 1.2em;
+    font-size: 1.3em;
     margin-bottom: 40px;
     font-weight: 300;
-}
-
-.btn-hero {
-    margin: 0 10px;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 
-/* --- 4. WHY CHOOSE US? --- */
-.why-us {
-    background-color: var(--background-light);
+/* --- Private Transfers Section --- */
+.private-transfers-section {
+    background-color: white;
     padding: 80px 0;
 }
+.grid-3-split {
+    display: grid;
+    grid-template-columns: 1.2fr 2fr;
+    gap: 50px;
+    align-items: center;
+}
+.left-content h2 {
+    text-align: left;
+    font-size: 2.8em;
+    line-height: 1.2;
+}
+.left-content i {
+    color: var(--accent-gold);
+    margin-right: 15px;
+}
+.right-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+}
+.feature-card {
+    background: var(--bg-light-grey);
+    padding: 30px 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+.feature-card i {
+    font-size: 2.5em;
+    color: var(--primary-light);
+    margin-bottom: 15px;
+}
+.feature-card h3 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    color: var(--primary-dark);
+}
+.feature-card p {
+    color: var(--text-light);
+    font-size: 0.95em;
+}
 
-.why-us .card {
+
+/* --- Transfer Details Section --- */
+.transfer-details-section {
+    background-color: var(--bg-light-grey);
+    padding: 80px 0;
+    text-align: center;
+}
+.transfer-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 40px;
+}
+.transfer-type-card {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: left;
+    position: relative;
+    padding-top: 80px; /* Space for icon circle */
+}
+.icon-circle {
+    background: var(--primary-dark);
+    color: white;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.2em;
+    position: absolute;
+    top: -35px; /* Half of height to appear centered on top edge */
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+.transfer-type-card h3 {
+    text-align: center;
+    color: var(--accent-gold);
+    margin-bottom: 25px;
+}
+.transfer-type-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 25px;
+}
+.transfer-type-card li {
+    background: var(--bg-light-grey);
+    margin-bottom: 8px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-family: var(--font-secondary);
+}
+.transfer-type-card .highlight {
+    font-weight: 600;
+    color: var(--primary-light);
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+/* --- Tours Section --- */
+.tours-section {
+    padding: 80px 0;
+}
+.tours-section h2 {
+    text-align: center;
+}
+.tours-section h2 i {
+    color: var(--accent-gold);
+    margin-right: 15px;
+}
+.grid-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+.tour-gallery-item {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    position: relative;
+}
+.tour-gallery-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+.tour-info {
+    padding: 15px 10px;
+    text-align: left;
+    padding-bottom: 50px; /* Space for button */
+}
+.tour-info h4 {
+    font-size: 1.1em;
+    color: var(--primary-dark);
+    margin-bottom: 5px;
+}
+.tour-info p {
+    font-size: 0.9em;
+    color: var(--text-light);
+}
+
+
+/* --- Our Fleet Section --- */
+.fleet-section {
+    background-color: var(--bg-light-grey);
+    padding: 80px 0;
+    text-align: center;
+}
+.fleet-section h2 {
+    text-align: center;
+}
+.fleet-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding-bottom: 20px;
+    position: relative;
+}
+.fleet-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 15px;
+}
+.fleet-card h3 {
+    font-size: 1.4em;
+    color: var(--accent-gold);
+    margin-bottom: 10px;
+}
+.fleet-card p {
+    font-family: var(--font-secondary);
+    color: var(--text-light);
+    font-size: 0.95em;
+    padding: 0 15px;
+    margin-bottom: 20px;
+}
+
+
+/* --- Reviews Section --- */
+.reviews-section {
+    background: linear-gradient(to right, #e0f2f1, #c8e6c9); /* Light green gradient */
+    padding: 80px 0;
+    text-align: center;
+}
+.reviews-section h2 {
+    color: var(--primary-dark);
+}
+.review-box {
     background: white;
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    transition: transform 0.3s;
-}
-
-.why-us .card:hover {
-    transform: translateY(-5px);
-}
-
-.icon-large {
-    font-size: 3em;
-    color: var(--accent-color);
-    margin-bottom: 15px;
-}
-
-
-/* --- 5. TRANSFER SERVICES --- */
-.transfer-services {
-    padding-bottom: 80px;
-}
-
-.transfer-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-}
-
-.transfer-box {
-    background: var(--background-light);
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
-}
-
-.transfer-box h3 {
-    color: var(--accent-color);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     text-align: center;
-}
-
-.transfer-box ul {
-    list-style: none;
-    margin: 20px 0;
-    font-size: 1.1em;
-}
-
-.transfer-box li {
-    padding: 8px 0;
-    border-bottom: 1px solid #ddd;
-}
-
-.transfer-box .highlight {
-    font-weight: 600;
-    color: var(--primary-color);
-    text-align: center;
-}
-
-
-/* --- 6. TOUR SERVICES (VIDEO FOCUS) --- */
-.tour-services {
-    background-color: var(--background-light);
-    text-align: center;
-}
-
-.tour-subtext {
-    font-size: 1.1em;
-    margin-bottom: 50px;
-}
-
-.tour-card {
-    background: white;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.video-placeholder {
-    height: 180px; /* กำหนดขนาดสำหรับพื้นที่วิดีโอ */
-    background-color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 2em;
-    cursor: pointer;
-    position: relative;
-}
-
-.video-placeholder i {
-    opacity: 0.8;
-}
-
-.tour-card h4 {
-    padding: 15px 10px;
-    margin: 0;
-    font-size: 1.1em;
-    color: var(--primary-color);
-}
-
-
-/* --- 7. OUR FLEET --- */
-.fleet-section {
-    text-align: center;
-    padding-bottom: 80px;
-}
-
-.fleet-card {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.car-image-placeholder {
-    height: 200px; 
-    background-color: #ccc; /* ใช้สีเทาเป็นตัวแทนรูปภาพรถ */
-    background-image: url('placeholder-car.svg'); /* ควรเปลี่ยนเป็นรูปรถ Camry, MU-X, Commuter VIP จริง */
-    background-size: cover;
-    background-position: center;
-    border-radius: 5px;
-    margin-bottom: 15px;
-}
-
-.fleet-card h3 {
-    color: var(--accent-color);
-}
-
-
-/* --- 8. TESTIMONIALS --- */
-.reviews-section {
-    background-color: var(--primary-color);
-    color: white;
-}
-
-.reviews-section h2 {
-    color: var(--accent-color);
-}
-
-.review-box {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 25px;
-    border-radius: 8px;
-    font-style: italic;
-    font-size: 1.1em;
-    height: 100%; /* ทำให้กล่องมีความสูงเท่ากัน */
+    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-}
-
-.review-box p {
-    margin-top: 10px;
-    font-style: normal;
-}
-
-
-/* --- 9. CONTACT & FINAL CTA --- */
-.contact-section {
-    background-color: white;
-    padding: 80px 0;
-}
-
-.contact-content {
-    text-align: center;
-}
-
-.contact-content h2 {
-    margin-bottom: 40px;
-}
-
-.contact-grid {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: 50px;
-    text-align: left;
-}
-
-.contact-form {
-    background: var(--background-light);
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-}
-
-.contact-form h3 {
-    color: var(--primary-color);
-    margin-top: 0;
-}
-
-.contact-form input, .contact-form select, .contact-form textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-family: var(--font-family);
-}
-
-.contact-info {
-    padding: 30px;
-    background: var(--primary-color);
-    color: white;
-    border-radius: 8px;
-}
-
-.contact-info h3 {
-    color: var(--accent-color);
-    margin-top: 0;
-}
-
-.contact-info p {
-    margin-bottom: 15px;
-    font-size: 1.1em;
-}
-
-.qr-code-placeholder {
-    height: 150px;
-    width: 150px;
-    background-color: white;
-    margin-top: 20px;
-    border-radius: 5px;
-    display: inline-block;
-}
-
-/* --- 10. FOOTER --- */
-footer {
-    background: var(--background-dark);
-    color: white;
-    padding: 20px 5%;
-    text-align: center;
-    display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.client-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid var(--accent-gold);
+}
+.review-box h3 {
+    font-size: 1.3em;
+    color: var(--primary-light);
+    margin-bottom: 10px;
+}
+.review-box p {
+    font-style: italic;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+    font-family: var(--font-secondary);
+    flex-grow: 1; /* Make paragraph take available space */
+}
+.stars {
+    color: var(--accent-gold);
+    font-size: 1.2em;
+}
+
+
+/* --- Footer --- */
+footer {
+    background: var(--primary-dark);
+    color: white;
+    padding: 50px 0 20px 0;
     font-size: 0.9em;
 }
-
-.social-links i {
+.footer-content {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+.footer-col {
+    flex: 1;
+    min-width: 200px; /* Minimum width for columns */
+}
+.footer-col h3 {
+    color: var(--accent-gold);
+    margin-bottom: 20px;
+    font-size: 1.2em;
+}
+.footer-col p, .footer-col ul {
+    color: rgba(255, 255, 255, 0.8);
+    list-style: none;
+    padding: 0;
+}
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+.footer-col a {
+    color: rgba(255, 255, 255, 0.8);
+    transition: color 0.3s;
+}
+.footer-col a:hover {
+    color: var(--accent-gold);
+}
+.footer-logo-col {
+    flex: 1.5; /* Make logo column slightly wider */
+}
+.footer-logo-col img {
+    margin-right: 10px;
+    border-radius: 5px;
+    vertical-align: middle;
+}
+.footer-logo-col .social-links {
+    margin-top: 20px;
+}
+.footer-logo-col .social-links a {
     font-size: 1.5em;
-    margin-left: 15px;
-    cursor: pointer;
+    margin-right: 15px;
+    color: rgba(255, 255, 255, 0.7);
+}
+.footer-logo-col .social-links a:hover {
+    color: var(--accent-gold);
 }
 
-/* --- RESPONSIVE ADJUSTMENTS --- */
-@media (max-width: 900px) {
-    .grid-3, .transfer-grid, .contact-grid {
-        grid-template-columns: 1fr;
-    }
-    .transfer-box {
-        margin-bottom: 20px;
-    }
-    .hero-content h1 {
-        font-size: 2.5em;
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.6);
+}
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+    header nav {
+        display: none; /* Hide main nav on smaller screens */
     }
     header {
-        flex-direction: column;
+        justify-content: center; /* Center header content */
+    }
+    .header-cta {
+        position: absolute; /* Position CTAs */
+        right: 15px;
+        top: 10px;
+    }
+    .hero-content h1 {
+        font-size: 2.8em;
+    }
+    .hero-content p {
+        font-size: 1.1em;
+    }
+    .grid-3-split {
+        grid-template-columns: 1fr;
         text-align: center;
-        padding: 15px 5%;
     }
-    nav {
-        margin: 10px 0;
+    .left-content h2 {
+        text-align: center;
     }
-    .contact-grid {
-        gap: 30px;
+    .transfer-grid-2 {
+        grid-template-columns: 1fr;
+    }
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-col {
+        min-width: unset;
+        width: 100%;
     }
 }
+
+@media (max-width: 768px) {
+    .header-cta .lang-switch {
+        display: none; /* Hide lang switch on very small screens */
+    }
+    .hero-content h1 {
+        font-size: 2.2em;
+    }
+    .hero-content p {
+        font-size: 1em;
+    }
+    .btn-hero-primary, .btn-hero-secondary {
+        padding: 12px 25px;
+        font-size: 1em;
+        margin: 5
